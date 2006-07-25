@@ -1,5 +1,3 @@
-# TODO:
-#  - make it build
 Summary:	Open source Colonization clone
 Summary(pl):	Klon gry Colonization o otwartych ¼ród³ach
 Name:		freecol
@@ -12,10 +10,12 @@ Source0:	http://dl.sourceforge.net/freecol/%{name}-%{version}-src.tar.gz
 Source1:	%{name}.sh
 URL:		http://www.freecol.org/
 BuildRequires:	ant
+BuildRequires:	ant-nodeps
 BuildRequires:	higlayout
 BuildRequires:	jdk >= 1.4
 Requires:	higlayout
 Requires:	jre >= 1.4
+Requires:	jre-X11
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
