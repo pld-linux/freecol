@@ -23,6 +23,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The FreeCol team aims to create an Open Source version of Colonization
 (released under the GPL).
 
+%description -l pl
+Celem zespo³y FreeCol jest stworzenie otwartej wersji gry Colonization
+(wydanej na licencji GPL).
+
 %prep
 %setup -q -n %{name}
 #rm -rf jars
@@ -37,7 +41,7 @@ export CLASSPATH JAVA_HOME
 %install
 rm -rf $RPM_BUILD_ROOT
 install -Dpm 644 FreeCol.jar \
-    $RPM_BUILD_ROOT%{_datadir}/games/freecol/FreeCol.jar
+	$RPM_BUILD_ROOT%{_datadir}/games/freecol/FreeCol.jar
 install -Dpm 755 %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
 
 %clean
@@ -45,6 +49,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING README
+%doc README
 %attr(755,root,root) %{_bindir}/freecol
-%{_datadir}/games/freecol/
+%{_datadir}/games/freecol
