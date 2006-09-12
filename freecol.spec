@@ -36,7 +36,7 @@ Celem zespo³y FreeCol jest stworzenie otwartej wersji gry Colonization
 CLASSPATH=$(build-classpath higlayout)
 JAVA_HOME=%{java_home}
 export CLASSPATH JAVA_HOME
-%{ant} -Dnojars -Dnodata fullpackage
+%ant -Dnojars -Dnodata fullpackage
 
 %install
 rm -rf $RPM_BUILD_ROOT
