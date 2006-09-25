@@ -1,0 +1,19 @@
+--- freecol/build.xml~	2006-09-22 11:23:26.000000000 +0200
++++ freecol/build.xml	2006-09-25 11:11:52.000000000 +0200
+@@ -20,16 +20,6 @@
+     <fileset dir="test/lib" includes="*.jar" />
+   </path>
+ 
+-  <!-- TASK DEFINITIONS -->
+-  <taskdef name="jsmoothgen"
+-           classname="net.charabia.jsmoothgen.ant.JSmoothGen"
+-           classpath="${freecol.build.dir}/jars/jsmoothgen-ant.jar"
+-  />
+-  <taskdef name="izpack"
+-           classname="com.izforge.izpack.ant.IzPackTask"
+-           classpath="${freecol.build.dir}/jars/standalone-compiler.jar"
+-  />
+-
+   <target name="init" unless="TSTAMP">
+     <tstamp/>
+   </target>
