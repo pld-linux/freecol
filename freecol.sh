@@ -17,4 +17,4 @@ set_classpath $BASE_JARS
 set_flags $BASE_FLAGS
 set_options $BASE_OPTIONS
 
-run "$@"
+run $@ --freecol-data /usr/share/freecol
