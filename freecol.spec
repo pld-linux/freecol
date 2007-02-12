@@ -1,5 +1,5 @@
 Summary:	Open source Colonization clone
-Summary(pl.UTF-8):   Klon gry Colonization o otwartych źródłach
+Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
 Version:	0.5.1
 Release:	0.1
