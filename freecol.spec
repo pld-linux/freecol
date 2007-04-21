@@ -1,14 +1,13 @@
 Summary:	Open source Colonization clone
 Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
-Version:	0.5.1
+Version:	0.6.0
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/freecol/%{name}-%{version}-src.tar.gz
-# Source0-md5:	6b0b94da77a8cb0f671e1f3d392bcf89
+# Source0-md5:	1b0a42f1cb2a9ea153e5e762013b5712
 Source1:	%{name}.sh
-Patch0:		%{name}-no_taskdefs.patch
 URL:		http://www.freecol.org/
 BuildRequires:	ant
 BuildRequires:	ant-nodeps
@@ -30,13 +29,12 @@ Celem zespoły FreeCol jest stworzenie otwartej wersji gry Colonization
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
 
 %build
 CLASSPATH="$(build-classpath higlayout)"
 JAVA_HOME=%{java_home}
 export CLASSPATH JAVA_HOME
-%ant -Dnojars -Dnodata fullpackage
+%ant
 
 %install
 rm -rf $RPM_BUILD_ROOT
