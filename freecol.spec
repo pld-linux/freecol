@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/freecol/%{name}-%{version}-src.tar.gz
+Source1:	%{name}.desktop
 # Source0-md5:	b94930669e3e3a9f84a294e0ff4c5543
 Source1:	%{name}.sh
 URL:		http://www.freecol.org/
@@ -44,6 +45,7 @@ install -Dpm 755 %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
 
 install -d $RPM_BUILD_ROOT%{_datadir}/freecol
 cp -ar data/* $RPM_BUILD_ROOT%{_datadir}/freecol/
+install %SOURCE1 $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,3 +56,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/freecol
 %{_datadir}/games/freecol
 %{_datadir}/freecol
+%{_desktopdir}/%{name}.desktop
