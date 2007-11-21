@@ -1,16 +1,15 @@
 Summary:	Open source Colonization clone
 Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
-Version:	0.7.1
+Version:	0.7.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/freecol/%{name}-%{version}-src.tar.gz
-# Source0-md5:	b94930669e3e3a9f84a294e0ff4c5543
+# Source0-md5:	254576cbfada1f20535e641feb2b38f0
 Source1:	%{name}.sh
 Source2:	%{name}.desktop
 URL:		http://www.freecol.org/
-BuildRequires:	ant
 BuildRequires:	ant-nodeps
 BuildRequires:	higlayout
 BuildRequires:	jdk >= 1.4
@@ -39,11 +38,12 @@ export CLASSPATH JAVA_HOME
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -Dpm 644 FreeCol.jar \
-	$RPM_BUILD_ROOT%{_datadir}/games/freecol/FreeCol.jar
-install -Dpm 755 %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
 
-install -d $RPM_BUILD_ROOT%{_datadir}/freecol
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/freecol,%{_desktopdir}}
+
+install FreeCol.jar $RPM_BUILD_ROOT%{_datadir}/freecol/FreeCol.jar
+install %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
+
 cp -ar data/* $RPM_BUILD_ROOT%{_datadir}/freecol/
 install %SOURCE2 $RPM_BUILD_ROOT%{_desktopdir}
 
@@ -54,6 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/freecol
-%{_datadir}/games/freecol
 %{_datadir}/freecol
 %{_desktopdir}/%{name}.desktop

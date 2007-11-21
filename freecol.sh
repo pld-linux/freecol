@@ -8,7 +8,7 @@ else
 fi
 
 MAIN_CLASS="net.sf.freecol.FreeCol"
-CLASSPATH="/usr/share/games/freecol/FreeCol.jar"
+CLASSPATH="/usr/share/freecol/FreeCol.jar"
 BASE_JARS="higlayout"
 BASE_FLAGS="-Xmx256M"
 
