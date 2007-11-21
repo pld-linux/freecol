@@ -1,3 +1,5 @@
+# NOTE:
+# - BuildArch is not noarch beacouse required higlayout excludes some archs
 Summary:	Open source Colonization clone
 Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
@@ -16,7 +18,7 @@ BuildRequires:	jdk >= 1.4
 Requires:	higlayout
 Requires:	jre >= 1.4
 Requires:	jre-X11
-BuildArch:	noarch
+ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,7 +46,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/freecol,%{_desktopdir},%{_pixm
 install FreeCol.jar $RPM_BUILD_ROOT%{_datadir}/freecol/FreeCol.jar
 install %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
 
-cp -ar data/* $RPM_BUILD_ROOT%{_datadir}/freecol/
+cp -a data/* $RPM_BUILD_ROOT%{_datadir}/freecol/
 install %SOURCE2 $RPM_BUILD_ROOT%{_desktopdir}
 install %{name}.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
