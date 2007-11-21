@@ -39,13 +39,14 @@ export CLASSPATH JAVA_HOME
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/freecol,%{_desktopdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/freecol,%{_desktopdir},%{_pixmapsdir}}
 
 install FreeCol.jar $RPM_BUILD_ROOT%{_datadir}/freecol/FreeCol.jar
 install %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
 
 cp -ar data/* $RPM_BUILD_ROOT%{_datadir}/freecol/
 install %SOURCE2 $RPM_BUILD_ROOT%{_desktopdir}
+install %{name}.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,3 +57,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/freecol
 %{_datadir}/freecol
 %{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.xpm
