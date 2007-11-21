@@ -1,5 +1,4 @@
-# NOTE:
-# - BuildArch is not noarch beacouse required higlayout excludes some archs
+%include	/usr/lib/rpm/macros.java
 Summary:	Open source Colonization clone
 Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
@@ -15,10 +14,15 @@ URL:		http://www.freecol.org/
 BuildRequires:	ant-nodeps
 BuildRequires:	higlayout
 BuildRequires:	jdk >= 1.4
+BuildRequires:	jpackage-utils
+BuildRequires:	rpm-javaprov
+BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	higlayout
 Requires:	jre >= 1.4
 Requires:	jre-X11
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664}
+BuildArch:	noarch
+# list arches that can fill higlayout dependency
+ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,9 +37,8 @@ Celem zespoły FreeCol jest stworzenie otwartej wersji gry Colonization
 %setup -q -n %{name}
 
 %build
-CLASSPATH="$(build-classpath higlayout)"
-JAVA_HOME=%{java_home}
-export CLASSPATH JAVA_HOME
+required_jars="higlayout"
+export CLASSPATH=$(build-classpath $required_jars)
 %ant
 
 %install
