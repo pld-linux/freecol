@@ -22,7 +22,6 @@ Requires:	jre >= 1.4
 Requires:	jre-X11
 BuildArch:	noarch
 # list arches that can fill higlayout dependency
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
