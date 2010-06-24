@@ -8,8 +8,7 @@ else
 fi
 
 MAIN_CLASS="net.sf.freecol.FreeCol"
-CLASSPATH="/usr/share/freecol/FreeCol.jar"
-BASE_JARS="higlayout"
+BASE_JARS="freecol commons-cli higlayout"
 BASE_FLAGS="-Xmx256M"
 
 set_jvm
@@ -17,4 +16,4 @@ set_classpath $BASE_JARS
 set_flags $BASE_FLAGS
 set_options $BASE_OPTIONS
 
-run $@ --freecol-data /usr/share/freecol
+run --freecol-data /usr/share/freecol "$@"
