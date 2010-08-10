@@ -8,7 +8,7 @@ else
 fi
 
 MAIN_CLASS="net.sf.freecol.FreeCol"
-BASE_JARS="freecol commons-cli higlayout"
+BASE_JARS="freecol commons-cli higlayout miglayout"
 BASE_FLAGS="-Xmx256M"
 
 set_jvm
