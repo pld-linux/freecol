@@ -3,7 +3,7 @@ Summary:	Open source Colonization clone
 Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
 Version:	0.9.4
-Release:	1
+Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/freecol/%{name}-%{version}-src.tar.gz
