@@ -50,6 +50,10 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/freecol,%{_desktopdir},%{_pixm
 install FreeCol.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
 install %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
 
+# install freecol specific cortado library
+install jars/cortado-fc-1.0.jar $RPM_BUILD_ROOT%{_javadir}/
+ln -s  cortado-fc-1.0.jar $RPM_BUILD_ROOT%{_javadir}/cortado-fc.jar
+
 cp -a data/* $RPM_BUILD_ROOT%{_datadir}/freecol/
 install %SOURCE2 $RPM_BUILD_ROOT%{_desktopdir}
 install %{name}.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -63,5 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/freecol
 %{_datadir}/freecol
 %{_javadir}/%{name}.jar
+%{_javadir}/cortado-fc*.jar
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.xpm
