@@ -38,7 +38,7 @@ Celem zespołu FreeCol jest stworzenie otwartej wersji gry Colonization
 %setup -q -n %{name}
 
 %build
-required_jars="higlayout miglayout"
+required_jars="higlayout miglayout-swing"
 export CLASSPATH=$(build-classpath $required_jars)
 %ant
 
