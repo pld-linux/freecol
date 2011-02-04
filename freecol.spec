@@ -1,6 +1,3 @@
-#
-# TODO: runs only with --no-sound
-#
 
 %define		_status	alpha
 
