@@ -1,5 +1,5 @@
 
-%define		_status	alpha
+%define		_status	alpha2
 
 %include	/usr/lib/rpm/macros.java
 Summary:	Open source Colonization clone
@@ -9,8 +9,8 @@ Version:	0.10.0
 Release:	0.%{_status}.1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://downloads.sourceforge.net/freecol/%{name}-%{version}-%{_status}-src.tar.gz
-# Source0-md5:	b8ed782019d5e0ccdc6d46f892372de5
+Source0:	http://downloads.sourceforge.net/freecol/%{name}-%{version}-%{_status}-src.zip
+# Source0-md5:	5327b5e1f07759bff6de2f4daf8c5787
 Source1:	%{name}.sh
 Source2:	%{name}.desktop
 URL:		http://www.freecol.org/
@@ -21,6 +21,7 @@ BuildRequires:	jpackage-utils
 BuildRequires:	miglayout
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	unzip
 Requires:	higlayout
 Requires:	java-commons-cli
 Requires:	jre >= 1.4
