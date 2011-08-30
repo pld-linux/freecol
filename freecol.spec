@@ -1,16 +1,13 @@
-#
-# TODO: runs only with --no-sound
-#
 %include	/usr/lib/rpm/macros.java
 Summary:	Open source Colonization clone
 Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
-Version:	0.9.5
+Version:	0.10.1
 Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://downloads.sourceforge.net/freecol/%{name}-%{version}-src.tar.gz
-# Source0-md5:	c7203fbe252e6612c4391092e195b493
+Source0:	http://downloads.sourceforge.net/freecol/%{name}-%{version}-src.zip
+# Source0-md5:	e7e218d1170cc049f0bbf7bc3bad76b1
 Source1:	%{name}.sh
 Source2:	%{name}.desktop
 URL:		http://www.freecol.org/
@@ -21,6 +18,7 @@ BuildRequires:	jpackage-utils
 BuildRequires:	miglayout
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	unzip
 Requires:	higlayout
 Requires:	java-commons-cli
 Requires:	jre >= 1.4
@@ -54,8 +52,8 @@ install FreeCol.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
 install %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/freecol
 
 # install freecol specific cortado library
-install jars/cortado-fc-1.0.jar $RPM_BUILD_ROOT%{_javadir}/
-ln -s  cortado-fc-1.0.jar $RPM_BUILD_ROOT%{_javadir}/cortado-fc.jar
+install jars/cortado-0.6.0.jar $RPM_BUILD_ROOT%{_javadir}/
+ln -s  cortado-0.6.0.jar $RPM_BUILD_ROOT%{_javadir}/cortado-fc.jar
 
 cp -a data/* $RPM_BUILD_ROOT%{_datadir}/freecol/
 install %SOURCE2 $RPM_BUILD_ROOT%{_desktopdir}
@@ -70,6 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/freecol
 %{_datadir}/freecol
 %{_javadir}/%{name}.jar
-%{_javadir}/cortado-fc*.jar
+%{_javadir}/cortado-0.6.0.jar
+%{_javadir}/cortado-fc.jar
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.xpm
