@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.java
 Summary:	Open source Colonization clone
 Summary(pl.UTF-8):	Klon gry Colonization o otwartych źródłach
 Name:		freecol
